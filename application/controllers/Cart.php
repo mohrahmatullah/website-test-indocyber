@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Cart extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,6 +21,7 @@ class Home extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('cart_model');
 		$this->load->model('product_model');
 		$this->load->helper(['url_helper', 'form']);
     	$this->load->library(['form_validation', 'session']);
@@ -28,16 +29,16 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$data['database'] = $this->product_model->get_all_data();
+		$data['database'] = $this->cart_model->get_cart();
+		$data['title'] = 'Cart';
 		$data['count_cart'] = $this->product_model->count_cart();
-		$data['title'] = 'Shop | Home';
-		$this->load->view('home/index', $data);
+		$this->load->view('home/cart', $data);
 	}
 
-	public function detail( $id )
+	public function deletecart($id)
 	{
-		$data['title'] = 'Shop | Detail';
-		$data['count_cart'] = $this->product_model->count_cart();
-		$this->load->view('Home/detail-product', $data);
+		$this->cart_model->delete_cart($id);
+		$this->session->set_flashdata('hapus_sukses','Data cart berhasil di hapus');
+		redirect('cart');
 	}
 }
