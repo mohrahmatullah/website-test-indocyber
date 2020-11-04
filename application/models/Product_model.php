@@ -21,15 +21,15 @@ class Product_model extends CI_Model
 		$result = $this->db->get();
 
 		return $result->row();
-
-		// $query = $this->db->get('tbl_produk');
-		// return $query->result();
 	}
 
 	public function count_cart()
 	{
-		$query = $this->db->get('tbl_keranjang');
-		return $query->num_rows();
+		$this->db->from("tbl_keranjang");
+		$this->db->where("tbl_keranjang.id_user", $this->session->userdata("id"));
+		$result = $this->db->get();
+		
+		return $result->num_rows();
 	}
 
 }

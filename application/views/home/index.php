@@ -4,7 +4,7 @@
 <body>
 
   <?php $this->load->view("_partials/navbars.php") ?>
-
+  
   <!-- Page Content -->
   <div class="container">
 

@@ -12,6 +12,7 @@ class Cart_model extends CI_Model
 		$this->db->select("tbl_keranjang.*, tbl_produk.nama_produk, tbl_produk.image");
 		$this->db->from("tbl_keranjang");
 		$this->db->join("tbl_produk","tbl_produk.id = tbl_keranjang.id_produk","left");
+		$this->db->where("tbl_keranjang.id_user", $this->session->userdata("id"));
 		$result = $this->db->get();
 
 		return $result->result();

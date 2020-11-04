@@ -12,12 +12,28 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
+          <?php if(!empty($this->session->userdata("email"))){ ?>
           <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#people-pop-up-register">Register</a>
+            <a class="nav-link"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#people-pop-up-login">Login</a>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <?php echo $this->session->userdata("email"); ?>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>">Logout</a>
+              </div>
+            </div>
           </li>
+          <?php }else{ ?>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#people-pop-up-register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#people-pop-up-login">Login</a>
+            </li>
+          <?php } ?>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('cart'); ?>">
               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -44,14 +60,13 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div> -->
-      <form class="modal-body" method="POST" action="">
+      <form class="modal-body" method="POST" action="<?php echo base_url('auth/aksi_login'); ?>">
         <a href="" class="d-block text-center mb-2">Login</a>
-        <input type="hidden" name="_token" id="_token" value="">
-        <small>Masukan username atau email</small>
-        <input type="text" name="login_username" class="form-control mb-0" />
+        <small>Masukan email</small>
+        <input type="text" name="login_email" class="form-control mb-0" />
         <small>Masukan password</small>
         <input type="password" name="login_password" class="form-control mb-2" />
-        <input type="submit" class="btn primary text-white d-block w-100" value="Sign In">
+        <input type="submit" class="btn btn-primary text-white d-block w-100" value="Sign In">
       </form>
     </div>
   </div>
@@ -67,7 +82,21 @@
         </button>
       </div> -->
       <form class="modal-body" method="POST" action="">
-        <a href="" class="d-block text-center mb-2">Login</a>
+        <a href="" class="d-block text-center mb-2">Register</a>
+        <?php
+            $errors = $this->session->flashdata('errors');
+            if(!empty($errors)){
+            ?>
+            <div class="row">
+                <div class="col-md-12">
+                <div class="alert alert-danger text-center">
+                    <?php foreach($errors as $key=>$error){ ?>
+                    <?php echo "$error<br>"; ?>
+                    <?php } ?>
+                </div>
+                </div>
+            </div>
+        <?php } ?>
         <input type="hidden" name="_token" id="_token" value="">
         <small>Masukan username atau email</small>
         <input type="text" name="login_username" class="form-control mb-0" />

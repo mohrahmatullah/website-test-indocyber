@@ -54,5 +54,6 @@ $route['default_controller'] = 'Home/index';
 $route['detail/(:any)'] = 'Home/detail/$1';
 $route['cart'] = 'Cart/index';
 $route['delete-cart/(:any)'] = 'Cart/deletecart/$1';
+$route['action-login'] = 'Auth/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
