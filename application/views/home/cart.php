@@ -24,19 +24,19 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">User</th>
+                  <th scope="col">Image</th>
                   <th scope="col">Produk</th>
                   <th scope="col">Qty</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <?php if(count($database) > 0){ ?>
+                <?php if(!empty($database)){ ?>
                 <?php foreach($database as $db) : ?> 
                 <tr>
                   <th scope="row">1</th>
-                  <td><?php echo $db->id_user; ?></td>
-                  <td><?php echo $db->id_produk; ?></td>
+                  <td><img src="<?php echo base_url('assets/uploads/'.$db->image); ?>" width="50px" height="50px"></td>
+                  <td><?php echo $db->nama_produk; ?></td>
                   <td><?php echo $db->qty; ?></td>
                   <td>
                     <a href="<?php echo base_url('delete-cart/'.$db->id); ?>">

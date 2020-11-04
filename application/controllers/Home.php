@@ -37,6 +37,7 @@ class Home extends CI_Controller {
 	public function detail( $id )
 	{
 		$data['title'] = 'Shop | Detail';
+		$data['database'] = $this->product_model->get_detail_data($id);
 		$data['count_cart'] = $this->product_model->count_cart();
 		$this->load->view('Home/detail-product', $data);
 	}

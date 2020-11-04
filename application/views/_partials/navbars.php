@@ -13,10 +13,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#people-pop-up-register">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#people-pop-up-login">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('cart'); ?>">
@@ -34,3 +34,47 @@
       </div>
     </div>
   </nav>
+
+<!-- Pop Up People Login -->
+<div class="modal" id="people-pop-up-login" tabindex="-1" role="dialog" aria-labelledby="people-pop-up-login" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content w-75">
+      <!-- <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <form class="modal-body" method="POST" action="">
+        <a href="" class="d-block text-center mb-2">Login</a>
+        <input type="hidden" name="_token" id="_token" value="">
+        <small>Masukan username atau email</small>
+        <input type="text" name="login_username" class="form-control mb-0" />
+        <small>Masukan password</small>
+        <input type="password" name="login_password" class="form-control mb-2" />
+        <input type="submit" class="btn primary text-white d-block w-100" value="Sign In">
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Pop Up People Login -->
+<div class="modal" id="people-pop-up-register" tabindex="-1" role="dialog" aria-labelledby="people-pop-up-register" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content w-75">
+      <!-- <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <form class="modal-body" method="POST" action="">
+        <a href="" class="d-block text-center mb-2">Login</a>
+        <input type="hidden" name="_token" id="_token" value="">
+        <small>Masukan username atau email</small>
+        <input type="text" name="login_username" class="form-control mb-0" />
+        <small>Masukan password</small>
+        <input type="password" name="login_password" class="form-control mb-2" />
+        <input type="submit" class="btn primary text-white d-block w-100" value="Sign In">
+      </form>
+    </div>
+  </div>
+</div>

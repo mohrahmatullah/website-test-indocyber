@@ -27,32 +27,34 @@
         <div class="col-lg-9">
 
           <div class="card mt-4">
-            <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+            <img class="card-img-top img-fluid" src="<?php echo base_url('assets/uploads/'.$database->image); ?>" alt="">
             <div class="card-body">
-              <h3 class="card-title">Product Name</h3>
-              <h4>$24.99</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-              <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-              4.0 stars
-            </div>
-          </div>
-          <!-- /.card -->
+              <h3 class="card-title"><?php echo $database->nama_produk; ?></h3>
+              <h4><?php echo $database->harga; ?></h4>
+              <h5>Remaining Stock : <?php echo $database->stock; ?></h5>
+              <a href="#" class="btn btn-success" data-toggle="modal" data-target="#people-pop-up-add-to-cart">Add to cart</a>
 
-          <div class="card card-outline-secondary my-4">
-            <div class="card-header">
-              Product Reviews
-            </div>
-            <div class="card-body">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-              <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-              <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-              <hr>
-              <a href="#" class="btn btn-success">Leave a Review</a>
+              <!-- Pop Up People Login -->
+              <div class="modal" id="people-pop-up-add-to-cart" tabindex="-1" role="dialog" aria-labelledby="people-pop-up-add-to-cart" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content w-75">
+                    <!-- <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div> -->
+                    <form class="modal-body" method="POST" action="">
+                      <a href="" class="d-block text-center mb-2">Login</a>
+                      <input type="hidden" name="_token" id="_token" value="">
+                      <small>Masukan username atau email</small>
+                      <input type="text" name="login_username" class="form-control mb-0" />
+                      <small>Masukan password</small>
+                      <input type="password" name="login_password" class="form-control mb-2" />
+                      <input type="submit" class="btn primary text-white d-block w-100" value="Sign In">
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- /.card -->
