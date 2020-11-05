@@ -1,70 +1,25 @@
-###################
-What is CodeIgniter
-###################
+How To Install this Project
+1. Persiapan
+	- Memiliki CLI/Command Line Interface berupa Command Prompt (CMD) atau Power Shell atau Git Bash (selanjutnya kita sebut terminal).
+	- Memiliki Web Server (misal XAMPP) dengan PHP Minimal 5.6 PHP maximal versi 7.2.24 Karena project ini menggunakan framework codeignite versi 3.1.10
+	- Composer telah ter-install, cek dengan perintah composer -V melalui terminal.
+	- Memiliki koneksi internet (untuk proses installasi).
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+2. Langkah-Langkah
+	- git clone https://github.com/mohrahmatullah/website-test-indocyber.git Melalui terminal
 
-*******************
-Release Information
-*******************
+Silahkan Ujicoba test dengan mengakses link localhost/website-test-indocyber
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Ketentuan:
 
-**************************
-Changelog and New Features
-**************************
+ini dengan akses 1 akan berhasil login
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+			email : users@email.com
+			password : 12345
 
-*******************
-Server Requirements
-*******************
+Ini dengan akses 0 tidak akan berhasil karena ketentuan dari soal
 
-PHP version 5.6 or newer is recommended.
+			email : admin@email.com
+			password : 12345
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Terimakasih atas kesempatannya untuk mengikuti test skill pada indocyber
