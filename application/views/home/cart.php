@@ -25,7 +25,9 @@
                 <tr>
                   <th scope="col">Image</th>
                   <th scope="col">Produk</th>
+                  <th scope="col">Harga Satuan</th>
                   <th scope="col">Qty</th>
+                  <th scope="col">Harga Total</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
@@ -35,7 +37,9 @@
                 <tr>
                   <td><a href="<?php echo base_url('detail/'.$db->id_produk); ?>"><img src="<?php echo base_url('assets/uploads/'.$db->image); ?>" width="50px" height="50px"></a></td>
                   <td><?php echo $db->nama_produk; ?></td>
+                  <td><?php echo money($db->harga); ?></td>
                   <td><?php echo $db->qty; ?></td>
+                  <td><?php echo money($db->qty*$db->harga); ?></td>
                   <td>
                     <a href="<?php echo base_url('delete-cart/'.$db->id.'/'.$db->id_produk.'/'.$db->qty); ?>">
                       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-archive-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
