@@ -8,7 +8,7 @@ How To Install this Project
 
 2. Langkah-Langkah
 	- git clone https://github.com/mohrahmatullah/website-test-indocyber.git Melalui terminal
-	- Untuk database sesuaikan dengan soal cms laravel
+	- Untuk databasenya sesuaikan dengan soal cms laravel
 	- Selesai
 
 Silahkan Ujicoba test dengan mengakses link localhost/website-test-indocyber
