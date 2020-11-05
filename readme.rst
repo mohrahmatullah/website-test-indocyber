@@ -3,7 +3,6 @@ How To Install this Project
 1. Persiapan
 	- Memiliki CLI/Command Line Interface berupa Command Prompt (CMD) atau Power Shell atau Git Bash (selanjutnya kita sebut terminal).
 	- Memiliki Web Server (misal XAMPP) dengan PHP Minimal 5.6 PHP maximal versi 7.2.24 Karena project ini menggunakan framework codeignite versi 3.1.10
-	- Composer telah ter-install, cek dengan perintah composer -V melalui terminal.
 	- Memiliki koneksi internet (untuk proses installasi).
 
 2. Langkah-Langkah
