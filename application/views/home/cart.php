@@ -32,6 +32,7 @@
                 </tr>
               </thead>
               <tbody>
+                <?php $sum_tot_Price  = 0 ?>
                 <?php if(!empty($database)){ ?>
                 <?php foreach($database as $db) : ?> 
                 <tr>
@@ -48,7 +49,16 @@
                     </a>
                   </td>
                 </tr>
+                <?php $sum_tot_Price += $db->qty*$db->harga ?>
                 <?php endforeach; ?>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Grand Total</td>
+                  <td><?php echo money($sum_tot_Price); ?></td>
+                  <td></td>
+                </tr>
                 <?php }else{ ?>
                   <tr>
                     <th colspan="5" class="text-center">Empty Cart</th>

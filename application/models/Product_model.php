@@ -9,7 +9,11 @@ class Product_model extends CI_Model
 
 	public function get_all_data()
 	{
-		$query = $this->db->get('tbl_produk');
+		$this->db->from("tbl_produk");
+		$this->db->order_by("created_at", "DESC");
+		$query = $this->db->get();
+
+		// $query = $this->db->get('tbl_produk');
 		return $query->result();
 	}
 
