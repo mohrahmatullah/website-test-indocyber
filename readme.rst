@@ -1,4 +1,5 @@
 How To Install this Project
+
 1. Persiapan
 	- Memiliki CLI/Command Line Interface berupa Command Prompt (CMD) atau Power Shell atau Git Bash (selanjutnya kita sebut terminal).
 	- Memiliki Web Server (misal XAMPP) dengan PHP Minimal 5.6 PHP maximal versi 7.2.24 Karena project ini menggunakan framework codeignite versi 3.1.10
@@ -7,6 +8,7 @@ How To Install this Project
 
 2. Langkah-Langkah
 	- git clone https://github.com/mohrahmatullah/website-test-indocyber.git Melalui terminal
+	- Selesai
 
 Silahkan Ujicoba test dengan mengakses link localhost/website-test-indocyber
 
