@@ -32,8 +32,8 @@
                 </tr>
               </thead>
               <tbody>
-                <?php $sum_tot_Price  = 0 ?>
                 <?php if(!empty($database)){ ?>
+                <?php $sum_tot_Price  = 0 ?>
                 <?php foreach($database as $db) : ?> 
                 <tr>
                   <td><a href="<?php echo base_url('detail/'.$db->id_produk); ?>"><img src="<?php echo base_url('assets/uploads/'.$db->image); ?>" width="50px" height="50px"></a></td>
