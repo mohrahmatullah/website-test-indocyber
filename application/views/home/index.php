@@ -4,7 +4,6 @@
 <body>
 
   <?php $this->load->view("_partials/navbars.php") ?>
-  
   <!-- Page Content -->
   <div class="container">
 
@@ -12,7 +11,7 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Shop Name</h1>
+        <h1 class="my-4">Categories</h1>
         <div class="list-group">
           <a href="#" class="list-group-item">Category 1</a>
           <a href="#" class="list-group-item">Category 2</a>
@@ -55,26 +54,20 @@
           <?php foreach($database as $db) : ?>  
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="<?php echo base_url('assets/uploads/'.$db->image); ?>" alt="" width="400px" height="200px"></a>
+              <a href="<?php echo base_url('detail/'.$db->id); ?>"><img class="card-img-top" src="<?php echo base_url('assets/uploads/'.$db->image); ?>" alt="" width="400px" height="200px"></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="<?php echo base_url('detail/'.$db->id); ?>"><?php echo $db->nama_produk; ?></a>
+                  <a style="color: #343a40 !important; text-decoration-line: none;" href="<?php echo base_url('detail/'.$db->id); ?>"><?php echo $db->nama_produk; ?></a>
                 </h4>
                 <h5><?php echo $db->harga; ?></h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
             </div>
           </div>
           <?php
             endforeach;
           ?>
-
         </div>
         <!-- /.row -->
-
       </div>
       <!-- /.col-lg-9 -->
 

@@ -35,9 +35,65 @@ class Cart extends CI_Controller {
 		$this->load->view('home/cart', $data);
 	}
 
-	public function deletecart($id)
+	public function add_to_cart( $id_produk )
+	{
+		$this->form_validation->set_rules('qty_beli', 'qty', 'required');
+		if($this->form_validation->run() === FALSE){
+			echo '<script>alert("Qty tidak boleh kosong !");window.location.href="'.base_url('detail/'.$id_produk).'";</script>';
+		}else{
+			$produk = $this->product_model->get_detail_data( $id_produk );
+			if($this->session->userdata("id")){
+				if($produk->stock < $this->input->post('qty_beli')){
+					echo '<script>alert("Qty tidak memenuhi batas stock !");window.location.href="'.base_url('detail/'.$id_produk).'";</script>';
+				}else{
+					$cek = $this->cart_model->cek_produk( $id_produk );
+					if($cek){		
+						$kondisi_cart = ['id_produk' => $id_produk];
+						$data_cart = [
+									'qty' => $cek->qty + $this->input->post('qty_beli')
+								];
+						$this->cart_model->update_cart($data_cart, $kondisi_cart);
+
+						$kondisi_produk = ['id' => $id_produk];
+						$data_produk = [
+									'stock' => $produk->stock - $this->input->post('qty_beli')
+								];
+						$this->product_model->update_cart_produk($data_produk, $kondisi_produk);
+						redirect('cart');
+					}else{
+						$data_cart = [
+							'id_user' => $this->session->userdata("id"),
+							'id_produk' => $id_produk,
+							'qty' => $this->input->post('qty_beli')
+						];
+						$this->cart_model->tambah_cart($data_cart);
+
+						$kondisi_produk = ['id' => $id_produk];
+						$data_produk = [
+									'stock' => $produk->stock - $this->input->post('qty_beli')
+								];
+						$this->product_model->update_cart_produk($data_produk, $kondisi_produk);
+
+						redirect('cart');
+					}	
+				}
+			}else{
+				echo '<script>alert("Anda harus masuk sebagai user untuk melanjutkan add to cart");window.location.href="'.base_url('detail/'.$id_produk).'";</script>';
+			}
+		}
+		
+	}
+
+	public function deletecart($id, $id_produk, $qty)
 	{
 		$this->cart_model->delete_cart($id);
+
+		$produk = $this->product_model->get_detail_data( $id_produk );
+		$kondisi_produk = ['id' => $id_produk];
+		$data_produk = [
+							'stock' => $produk->stock + $qty
+						];
+		$this->product_model->update_cart_produk($data_produk, $kondisi_produk);
 		$this->session->set_flashdata('hapus_sukses','Data cart berhasil di hapus');
 		redirect('cart');
 	}

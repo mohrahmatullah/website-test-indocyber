@@ -16,14 +16,32 @@ class Cart_model extends CI_Model
 		$result = $this->db->get();
 
 		return $result->result();
-
-		// $query = $this->db->get('tbl_keranjang');
-		// return $query->result();
 	}
 
 	public function delete_cart($id)
 	{
 		$this->db->delete('tbl_keranjang', ['id' => $id]);
+	}
+
+	public function cek_produk( $id_produk )
+	{
+		$this->db->select("*");
+		$this->db->from("tbl_keranjang");
+    	$this->db->where("id_produk", $id_produk);
+    	$this->db->where("id_user", $this->session->userdata("id"));
+		$result = $this->db->get();
+
+		return $result->row();
+	}
+
+	public function update_cart( $data, $id_produk )
+	{
+		$this->db->update('tbl_keranjang', $data, $id_produk);
+	}
+
+	public function tambah_cart( $data )
+	{
+		$this->db->insert('tbl_keranjang', $data);
 	}
 
 }

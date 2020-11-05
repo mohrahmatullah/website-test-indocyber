@@ -55,11 +55,6 @@
 <div class="modal" id="people-pop-up-login" tabindex="-1" role="dialog" aria-labelledby="people-pop-up-login" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content w-75">
-      <!-- <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> -->
       <form class="modal-body" method="POST" action="<?php echo base_url('auth/aksi_login'); ?>">
         <a href="" class="d-block text-center mb-2">Login</a>
         <small>Masukan email</small>
@@ -76,33 +71,19 @@
 <div class="modal" id="people-pop-up-register" tabindex="-1" role="dialog" aria-labelledby="people-pop-up-register" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content w-75">
-      <!-- <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> -->
-      <form class="modal-body" method="POST" action="">
+      <form class="modal-body" method="POST" action="<?php echo base_url('auth/proses_register'); ?>">
         <a href="" class="d-block text-center mb-2">Register</a>
-        <?php
-            $errors = $this->session->flashdata('errors');
-            if(!empty($errors)){
-            ?>
-            <div class="row">
-                <div class="col-md-12">
-                <div class="alert alert-danger text-center">
-                    <?php foreach($errors as $key=>$error){ ?>
-                    <?php echo "$error<br>"; ?>
-                    <?php } ?>
-                </div>
-                </div>
-            </div>
-        <?php } ?>
-        <input type="hidden" name="_token" id="_token" value="">
-        <small>Masukan username atau email</small>
-        <input type="text" name="login_username" class="form-control mb-0" />
-        <small>Masukan password</small>
-        <input type="password" name="login_password" class="form-control mb-2" />
-        <input type="submit" class="btn primary text-white d-block w-100" value="Sign In">
+        <small>Email</small>
+        <input type="email" name="reg_email" class="form-control mb-0" />
+        <small>Nama</small>
+        <input type="text" name="reg_nama" class="form-control mb-2" />
+        <small>Password</small>
+        <input type="password" name="reg_password" class="form-control mb-0" />
+        <small>No HP</small>
+        <input type="text" name="reg_no_hp" class="form-control mb-2" />
+        <small>Alamat</small>
+        <input type="text" name="reg_alamat" class="form-control mb-2" />        
+        <input type="submit" class="btn btn-primary text-white d-block w-100" value="Register">
       </form>
     </div>
   </div>

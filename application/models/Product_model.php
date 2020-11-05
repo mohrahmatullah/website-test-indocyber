@@ -32,6 +32,11 @@ class Product_model extends CI_Model
 		return $result->num_rows();
 	}
 
+	public function update_cart_produk( $data, $id_produk )
+	{
+		$this->db->update('tbl_produk', $data, $id_produk);
+	}
+
 }
 
 ?>

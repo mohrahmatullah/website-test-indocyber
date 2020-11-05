@@ -1,5 +1,5 @@
 <!-- Footer -->
-  <footer class="py-5 bg-dark mt-5">
+  <footer class="py-5 bg-dark" style="margin-top: 15rem;">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Shop 2020</p>
     </div>
