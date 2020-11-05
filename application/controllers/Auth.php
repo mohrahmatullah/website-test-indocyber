@@ -22,7 +22,7 @@ class Auth extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('auth_model');
-		$this->load->helper(['url_helper', 'form']);
+		$this->load->helper(['url_helper', 'form','helpers_helper']);
     	$this->load->library(['form_validation', 'session']);
 	}
 

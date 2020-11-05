@@ -59,7 +59,7 @@
                 <h4 class="card-title">
                   <a style="color: #343a40 !important; text-decoration-line: none;" href="<?php echo base_url('detail/'.$db->id); ?>"><?php echo $db->nama_produk; ?></a>
                 </h4>
-                <h5><?php echo $db->harga; ?></h5>
+                <h5><?php echo money($db->harga); ?></h5>
               </div>
             </div>
           </div>
