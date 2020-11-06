@@ -19,7 +19,7 @@
           <div class="card-header">
             Cart
           </div>
-          <div class="card-body">
+          <div class="card-body table-responsive">
             <table class="table">
               <thead>
                 <tr>
@@ -57,10 +57,7 @@
                 <?php $sum_tot_Price += $db->qty*$db->harga ?>
                 <?php endforeach; ?>
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>Grand Total</td>
+                  <td colspan="4" align="center">Grand Total</td>
                   <td><?php echo money($sum_tot_Price); ?></td>
                   <td></td>
                 </tr>
