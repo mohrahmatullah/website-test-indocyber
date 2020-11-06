@@ -63,7 +63,7 @@
                 </tr>
                 <?php }else{ ?>
                   <tr>
-                    <th colspan="5" class="text-center">Empty Cart</th>
+                    <th colspan="6" class="text-center">Empty Cart</th>
                   </tr>
                 <?php } ?>
               </tbody>
