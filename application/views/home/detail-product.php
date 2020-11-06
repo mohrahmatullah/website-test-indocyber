@@ -30,7 +30,7 @@
                       <h3 class="card-title"><?php echo $database->nama_produk; ?></h3>
                       <h5><?php echo money($database->harga); ?></h5>
                       <h5>Remaining Stock : <?php echo $database->stock; ?></h5>
-                      <small>Qty</small> <input type="number" name="qty_beli" class="form-control mb-2" min="1" max="<?php echo $database->stock; ?>" />
+                      <small>Qty</small> <input type="number" name="qty_beli" value="1" class="form-control mb-2" min="1" max="<?php echo $database->stock; ?>" />
                       <input type="submit" class="btn btn-primary text-white d-block w-100" value="Add to cart">
                     </form>
                   </div>
