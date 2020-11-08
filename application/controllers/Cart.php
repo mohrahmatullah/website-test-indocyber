@@ -43,7 +43,7 @@ class Cart extends CI_Controller {
 		}else{
 			$produk = $this->product_model->get_detail_data( $id_produk );
 			if($this->session->userdata("id")){
-				if($produk->stock < $this->input->post('qty_beli')){
+				if($produk->stock < $this->input->post('qty_beli') || $this->input->post('qty_beli') < 0){
 					echo '<script>alert("Qty tidak memenuhi batas stock !");window.location.href="'.base_url('detail/'.$id_produk).'";</script>';
 				}else{
 					$cek = $this->cart_model->cek_produk( $id_produk );
